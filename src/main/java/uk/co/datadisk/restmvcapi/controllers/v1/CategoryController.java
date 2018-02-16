@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import uk.co.datadisk.restmvcapi.CategoryService;
+import uk.co.datadisk.restmvcapi.services.CategoryService;
 import uk.co.datadisk.restmvcapi.api.v1.model.CategoryDTO;
 import uk.co.datadisk.restmvcapi.api.v1.model.CategoryListDTO;
 

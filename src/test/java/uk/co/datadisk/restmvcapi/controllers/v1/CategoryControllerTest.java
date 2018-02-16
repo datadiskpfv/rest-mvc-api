@@ -1,6 +1,6 @@
 package uk.co.datadisk.restmvcapi.controllers.v1;
 
-import uk.co.datadisk.restmvcapi.CategoryService;
+import uk.co.datadisk.restmvcapi.services.CategoryService;
 import uk.co.datadisk.restmvcapi.api.v1.model.CategoryDTO;
 import org.junit.Before;
 import org.junit.Test;

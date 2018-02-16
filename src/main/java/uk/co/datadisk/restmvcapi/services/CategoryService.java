@@ -1,4 +1,4 @@
-package uk.co.datadisk.restmvcapi;
+package uk.co.datadisk.restmvcapi.services;
 
 import uk.co.datadisk.restmvcapi.api.v1.model.CategoryDTO;
 

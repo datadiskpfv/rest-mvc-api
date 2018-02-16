@@ -1,4 +1,4 @@
-package uk.co.datadisk.restmvcapi;
+package uk.co.datadisk.restmvcapi.services;
 
 import org.junit.Before;
 import org.junit.Test;

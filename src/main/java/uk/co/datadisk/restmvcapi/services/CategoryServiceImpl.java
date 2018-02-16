@@ -1,4 +1,4 @@
-package uk.co.datadisk.restmvcapi;
+package uk.co.datadisk.restmvcapi.services;
 
 import org.springframework.stereotype.Service;
 import uk.co.datadisk.restmvcapi.api.v1.mapper.CategoryMapper;
