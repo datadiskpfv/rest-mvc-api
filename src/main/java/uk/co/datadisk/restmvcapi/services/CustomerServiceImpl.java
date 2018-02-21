@@ -3,6 +3,7 @@ package uk.co.datadisk.restmvcapi.services;
 import org.springframework.stereotype.Service;
 import uk.co.datadisk.restmvcapi.api.v1.mapper.CustomerMapper;
 import uk.co.datadisk.restmvcapi.api.v1.model.CustomerDTO;
+import uk.co.datadisk.restmvcapi.domain.Customer;
 import uk.co.datadisk.restmvcapi.repositories.CustomerRepository;
 
 import java.util.List;
@@ -39,5 +40,19 @@ public class CustomerServiceImpl implements CustomerService {
                 //.map(customerMapper::customerToCustomerDTO)
                 //.orElseThrow(RuntimeException::new); //todo implement better exception handling
 
+    }
+
+    @Override
+    public CustomerDTO createNewCustomer(CustomerDTO customerDTO) {
+
+        Customer customer = customerMapper.customerDtoToCustomer(customerDTO);
+
+        Customer savedCustomer = customerRepository.save(customer);
+
+        CustomerDTO returnDto = customerMapper.customerToCustomerDTO(savedCustomer);
+
+        returnDto.setCustomerUrl("/api/v1/customers/" + savedCustomer.getId());
+
+        return returnDto;
     }
 }
