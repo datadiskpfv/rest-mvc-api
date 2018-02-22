@@ -9,8 +9,10 @@ import uk.co.datadisk.restmvcapi.api.v1.model.CustomerListDTO;
 import uk.co.datadisk.restmvcapi.services.CustomerService;
 
 @Controller
-@RequestMapping("/api/v1/customers")
+@RequestMapping(CustomerController.BASE_URL)
 public class CustomerController {
+
+    public static final String BASE_URL = "/api/v1/customers";
 
     private final CustomerService customerService;
 
@@ -41,6 +43,18 @@ public class CustomerController {
     public ResponseEntity<CustomerDTO> updateCustomer(@PathVariable Long id, @RequestBody CustomerDTO customerDTO){
         return new ResponseEntity<CustomerDTO>(customerService.saveCustomerByDTO(id, customerDTO),
                 HttpStatus.OK);
+    }
+
+    @PatchMapping({"/{id}"})
+    public ResponseEntity<CustomerDTO> patchCustomer(@PathVariable Long id, @RequestBody CustomerDTO customerDTO){
+        return new ResponseEntity<CustomerDTO>(customerService.patchCustomer(id, customerDTO),
+                HttpStatus.OK);
+    }
+
+    @DeleteMapping({"/{id}"})
+    public ResponseEntity<Void> deleteCustomer(@PathVariable Long id){
+        customerService.deleteCustomerById(id);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 }

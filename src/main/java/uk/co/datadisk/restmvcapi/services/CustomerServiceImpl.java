@@ -1,12 +1,15 @@
 package uk.co.datadisk.restmvcapi.services;
 
 import org.springframework.stereotype.Service;
+import uk.co.datadisk.restmvcapi.Exceptions.ResourceNotFoundException;
 import uk.co.datadisk.restmvcapi.api.v1.mapper.CustomerMapper;
 import uk.co.datadisk.restmvcapi.api.v1.model.CustomerDTO;
+import uk.co.datadisk.restmvcapi.controllers.v1.CustomerController;
 import uk.co.datadisk.restmvcapi.domain.Customer;
 import uk.co.datadisk.restmvcapi.repositories.CustomerRepository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -36,9 +39,13 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public CustomerDTO getCustomerById(Long id) {
 
-        Customer customer = customerRepository.findOne(id);
-        CustomerDTO returnDto = customerMapper.customerToCustomerDTO(customer);
-        returnDto.setCustomerUrl("/api/v1/customers/" + id);
+        Optional<Customer> customer = Optional.ofNullable(customerRepository.findById(id).orElseThrow(ResourceNotFoundException::new));
+
+        //if(customer == null)
+        //    throw new ResourceNotFoundException();
+
+        CustomerDTO returnDto = customerMapper.customerToCustomerDTO(customer.get());
+        returnDto.setCustomerUrl(CustomerController.BASE_URL + "/" + id);
 
         return returnDto;
     }
@@ -62,7 +69,7 @@ public class CustomerServiceImpl implements CustomerService {
 
         CustomerDTO returnDto = customerMapper.customerToCustomerDTO(savedCustomer);
 
-        returnDto.setCustomerUrl("/api/v1/customer/" + savedCustomer.getId());
+        returnDto.setCustomerUrl("/api/v1/customers/" + savedCustomer.getId());
 
         return returnDto;
     }
@@ -93,8 +100,13 @@ public class CustomerServiceImpl implements CustomerService {
 
         CustomerDTO returnDto = customerMapper.customerToCustomerDTO(savedCustomer);
 
-        returnDto.setCustomerUrl("/api/v1/customer/" + savedCustomer.getId());
+        returnDto.setCustomerUrl("/api/v1/customers/" + savedCustomer.getId());
 
         return returnDto;
+    }
+
+    @Override
+    public void deleteCustomerById(Long id) {
+        customerRepository.delete(id);
     }
 }
