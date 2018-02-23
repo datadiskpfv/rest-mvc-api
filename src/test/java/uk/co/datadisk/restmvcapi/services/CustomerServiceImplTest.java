@@ -67,7 +67,7 @@ public class CustomerServiceImplTest {
         customer1.setFirstname("Michale");
         customer1.setLastname("Weston");
 
-        when(customerRepository.findOne(anyLong())).thenReturn(customer1);
+        when(customerRepository.findById(anyLong())).thenReturn(java.util.Optional.ofNullable(customer1));
 
         //when
         CustomerDTO customerDTO = customerService.getCustomerById(1L);
