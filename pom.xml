@@ -6,7 +6,10 @@
 	<groupId>uk.co.datadisk</groupId>
 	<artifactId>rest-mvc-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<modules>
+		<module>restmodel</module>
+	</modules>
+	<packaging>pom</packaging>
 
 	<name>rest-mvc-api</name>
 	<description>Demo to show Rest api using MVC</description>
