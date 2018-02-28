@@ -7,6 +7,10 @@ import java.util.List;
 public interface CategoryService {
     List<CategoryDTO> getAllCategories();
 
+    List<CategoryDTO> getAllCategoriesExceptName(String name);
+
+    List<CategoryDTO> getAllCategoriesExceptId(Long Id);
+
     CategoryDTO getCategoryByName(String name);
 
 }

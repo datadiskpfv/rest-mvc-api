@@ -28,6 +28,24 @@ public class CategoryServiceImpl implements CategoryService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public List<CategoryDTO> getAllCategoriesExceptName(String name) {
+
+        return categoryRepository.findAllByNameNotIn(name)
+                .stream()
+                .map(categoryMapper::categoryToCategoryDTO)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<CategoryDTO> getAllCategoriesExceptId(Long Id) {
+
+        return categoryRepository.findAllByIdNotIn(Id)
+                .stream()
+                .map(categoryMapper::categoryToCategoryDTO)
+                .collect(Collectors.toList());
+    }
+
 
     @Override
     public CategoryDTO getCategoryByName(String name) {

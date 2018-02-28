@@ -28,6 +28,7 @@ public class Bootstrap implements CommandLineRunner {
         loadCategories();
         loadCustomers();
         loadVendors();
+        displayCategories();
     }
 
     private void loadVendors() {
@@ -83,5 +84,20 @@ public class Bootstrap implements CommandLineRunner {
         customerRepository.save(customer2);
 
         System.out.println("Customers Loaded: " + customerRepository.count());
+    }
+
+    private void displayCategories() {
+        System.out.println("Display Categories: " + categoryRepository.findAll().size());
+
+        System.out.println("--------------------------------------------------------------");
+        for (Category c : categoryRepository.findAllByNameNotIn("Fruits")){
+            System.out.println("Category: " + c.getName());
+        }
+        System.out.println("--------------------------------------------------------------");
+        for (Category c : categoryRepository.findAllByIdNotIn(new Long(4))){
+            System.out.println("Category: " + c.getName());
+        }
+        System.out.println("--------------------------------------------------------------");
+
     }
 }
