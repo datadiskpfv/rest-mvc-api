@@ -5,7 +5,7 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import uk.co.datadisk.restmvcapi.api.v1.mapper.CustomerMapper;
-import uk.co.datadisk.restmvcapi.api.v1.model.CustomerDTO;
+import uk.co.datadisk.model.CustomerDTO;
 import uk.co.datadisk.restmvcapi.controllers.v1.CustomerController;
 import uk.co.datadisk.restmvcapi.domain.Customer;
 import uk.co.datadisk.restmvcapi.repositories.CustomerRepository;

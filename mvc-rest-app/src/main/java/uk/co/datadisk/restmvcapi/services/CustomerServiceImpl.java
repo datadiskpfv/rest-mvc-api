@@ -3,7 +3,7 @@ package uk.co.datadisk.restmvcapi.services;
 import org.springframework.stereotype.Service;
 import uk.co.datadisk.restmvcapi.Exceptions.ResourceNotFoundException;
 import uk.co.datadisk.restmvcapi.api.v1.mapper.CustomerMapper;
-import uk.co.datadisk.restmvcapi.api.v1.model.CustomerDTO;
+import uk.co.datadisk.model.CustomerDTO;
 import uk.co.datadisk.restmvcapi.controllers.v1.CustomerController;
 import uk.co.datadisk.restmvcapi.domain.Customer;
 import uk.co.datadisk.restmvcapi.repositories.CustomerRepository;

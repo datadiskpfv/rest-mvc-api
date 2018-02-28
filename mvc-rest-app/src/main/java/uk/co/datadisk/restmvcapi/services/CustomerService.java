@@ -1,6 +1,6 @@
 package uk.co.datadisk.restmvcapi.services;
 
-import uk.co.datadisk.restmvcapi.api.v1.model.CustomerDTO;
+import uk.co.datadisk.model.CustomerDTO;
 
 import java.util.List;
 

@@ -10,7 +10,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import uk.co.datadisk.restmvcapi.Exceptions.ResourceNotFoundException;
 import uk.co.datadisk.restmvcapi.Exceptions.RestResponseEntityExceptionHandler;
-import uk.co.datadisk.restmvcapi.api.v1.model.CustomerDTO;
+import uk.co.datadisk.model.CustomerDTO;
 import uk.co.datadisk.restmvcapi.services.CustomerService;
 
 import java.util.Arrays;

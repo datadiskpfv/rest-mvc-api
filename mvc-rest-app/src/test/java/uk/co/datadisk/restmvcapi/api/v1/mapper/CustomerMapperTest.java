@@ -1,7 +1,7 @@
 package uk.co.datadisk.restmvcapi.api.v1.mapper;
 
 import org.junit.Test;
-import uk.co.datadisk.restmvcapi.api.v1.model.CustomerDTO;
+import uk.co.datadisk.model.CustomerDTO;
 import uk.co.datadisk.restmvcapi.domain.Customer;
 
 import static org.junit.Assert.assertEquals;

@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import uk.co.datadisk.restmvcapi.api.v1.mapper.CustomerMapper;
-import uk.co.datadisk.restmvcapi.api.v1.model.CustomerDTO;
+import uk.co.datadisk.model.CustomerDTO;
 import uk.co.datadisk.restmvcapi.bootstrap.Bootstrap;
 import uk.co.datadisk.restmvcapi.domain.Customer;
 import uk.co.datadisk.restmvcapi.repositories.CategoryRepository;

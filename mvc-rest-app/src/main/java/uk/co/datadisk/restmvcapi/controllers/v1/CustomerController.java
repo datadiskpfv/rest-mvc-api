@@ -2,8 +2,9 @@ package uk.co.datadisk.restmvcapi.controllers.v1;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import uk.co.datadisk.restmvcapi.api.v1.model.CustomerDTO;
-import uk.co.datadisk.restmvcapi.api.v1.model.CustomerListDTO;
+
+import uk.co.datadisk.model.CustomerDTO;
+import uk.co.datadisk.model.CustomerListDTO;
 import uk.co.datadisk.restmvcapi.services.CustomerService;
 
 @RestController
@@ -21,7 +22,9 @@ public class CustomerController {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public CustomerListDTO getListofCustomers(){
-        return new CustomerListDTO(customerService.getAllCustomers());
+        CustomerListDTO customerListDTO = new CustomerListDTO();
+        customerListDTO.getCustomers().addAll(customerService.getAllCustomers());
+        return customerListDTO;
     }
 
     @GetMapping({"/{id}"})
