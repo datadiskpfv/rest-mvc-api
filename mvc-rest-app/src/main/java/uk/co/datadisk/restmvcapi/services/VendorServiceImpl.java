@@ -13,9 +13,6 @@ import uk.co.datadisk.restmvcapi.repositories.VendorRepository;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * Created by jt on 10/6/17.
- */
 @Service
 public class VendorServiceImpl implements VendorService {
 

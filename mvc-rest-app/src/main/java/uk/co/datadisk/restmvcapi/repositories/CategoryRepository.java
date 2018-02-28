@@ -5,9 +5,6 @@ import uk.co.datadisk.restmvcapi.domain.Category;
 
 import java.util.List;
 
-/**
- * Created by jt on 9/24/17.
- */
 public interface CategoryRepository extends JpaRepository<Category, Long> {
 
     Category findByName(String name);
