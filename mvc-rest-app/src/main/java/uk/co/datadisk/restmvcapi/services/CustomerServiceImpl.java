@@ -55,6 +55,8 @@ public class CustomerServiceImpl implements CustomerService {
 
         Customer customer = customerMapper.customerDtoToCustomer(customerDTO);
 
+        System.out.println("Customer Service createNewCustomer: " + customer.getFirstname());
+
         Customer savedCustomer = customerRepository.save(customer);
 
         CustomerDTO returnDto = customerMapper.customerToCustomerDTO(savedCustomer);

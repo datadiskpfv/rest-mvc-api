@@ -36,6 +36,7 @@ public class CustomerController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public CustomerDTO createNewCustomer(@RequestBody CustomerDTO customerDTO){
+        System.out.println("Customer Controller POST" + customerDTO.getFirstname());
         return customerService.createNewCustomer(customerDTO);
     }
 

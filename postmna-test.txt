@@ -1,0 +1,21 @@
+=================================================
+Test XML in postman set below:
+
+Content-Type = application/xml
+Accept = application/xml
+
+Body Raw:
+<CustomerDTO>
+    <firstname>Paul</firstname>
+    <lastname>Valle</lastname>
+</CustomerDTO>
+=================================================
+=================================================
+Test JSON in postman set below:
+
+Content-Type = application/json
+Accept = application/json
+
+Body raw:
+{"firstname": "Lorraine","lastname": "Valle"}
+=================================================
